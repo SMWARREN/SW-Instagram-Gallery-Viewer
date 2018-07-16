@@ -99,7 +99,9 @@ class swInstagramGalleryViewer
                 echo '<div class="imageContainer"><a target="_BLANK" href="'.$image['link'].'"><img src="'.$image['image'].'" width="100%" height="100%"></a></div>';
             }
         } else {
-            return $template;
+            foreach ($this->aImages as $image) {
+                echo $template;
+            }
         }
     }
 }
