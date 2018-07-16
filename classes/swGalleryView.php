@@ -83,8 +83,8 @@ class swInstagramGalleryViewer
     *
     * @param string $template  The template used to display images.
     *
-    * Example: <div class="imageContainer"><a target="_BLANK" href="'.$image['link'].'">
-    * <img src="'.$image['image'].'" width="100%" height="100%"></a></div>
+    * Custom Template Example: <div class="imageContainer"><a target="_BLANK" href="{link}">
+    * <img src="{image}" width="100%" height="100%"></a></div>
     *
     * @return string Returns a html string to be displayed.
     */
@@ -100,7 +100,10 @@ class swInstagramGalleryViewer
             }
         } else {
             foreach ($this->aImages as $image) {
-                echo $template;
+                $sStringsToReplace = ["{link}", "{image}"];
+                $sStringsToReplaceStrings = [$image['link'], $image['image']];
+                $sCustomTemplate = str_replace($sStringsToReplace, $sStringsToReplaceStrings, $template);
+                echo $sCustomTemplate;
             }
         }
     }

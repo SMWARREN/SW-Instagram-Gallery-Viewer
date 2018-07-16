@@ -14,11 +14,11 @@ $Gallery->displayImages();
 ?>
 ```
 
-3. There is also an optional parameter on the displayImages function where you can input your own template. For Example the default template is this: 
+3. There is also an optional parameter on the displayImages function where you can input your own template. For Example the default template is this:
 ```
-<div class="imageContainer"><a target="_BLANK" href="'.$image['link'].'"><img src="'.$image['image'].'" width="100%" height="100%"></a></div>
+<div class="imageContainer"><a target="_BLANK" href="{link}"><img src="{image}" width="100%" height="100%"></a></div>
 ```
-if you pass a different string including $image['link'] and $image['image'] you can display your image gallery how ever you want to.
+if you pass a different string including {link} and {image} you can display your image gallery how ever you want to.
 
 ## Authentication
 How to receive your access token for instagram.
